@@ -1,0 +1,207 @@
+
+/* ## Colors
+
+### Primary
+
+- Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+
+### Neutral
+
+- Very Light Grayish Blue: hsl(240, 78%, 98%)
+- Light Grayish Blue: hsl(234, 14%, 74%)
+- Grayish Blue: hsl(233, 13%, 49%)
+- Dark Grayish Blue: hsl(232, 13%, 33%) */
+
+
+:root {
+    --clr-gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --clr-light: hsl(234, 14%, 74%);
+    --clr-background: hsl(240, 78%, 98%);
+    --clr-neutral: hsl(233, 13%, 49%);
+    --clr-dark: hsl(232, 13%, 33%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100svh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--clr-background);
+    background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-position: top right, bottom left;
+    background-repeat: no-repeat, no-repeat;   
+}
+
+img,
+svg,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: no-preferences) {
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+}
+
+.primary-text {
+    text-align: center;
+    color: var(--clr-dark);
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
+.heading-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.toggle-box {
+    background: var(--clr-gradient);
+    height: 1.5rem;
+    width: 2.75rem;
+    border-radius: 20px;
+    padding: .2rem;
+    display: flex;
+}
+
+.toggle-switch {
+    cursor: pointer;
+    background: #fff;
+    height: 100%;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.toggle-switch.monthly-price {
+    margin-left: auto;
+}
+
+.toggle-setting {
+    color: var(--clr-light);
+    align-self: center;
+    margin-bottom: 4rem;
+}
+
+.card-container {
+    padding-inline: 2rem;
+}
+
+@media (min-width:950px) {
+    .card-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card {
+    padding: 2rem;
+}
+
+.card:nth-child(odd) {
+    background: #fff;
+    color: var(--clr-dark);
+    margin: 1rem 0;
+}
+
+.card:nth-child(even) {
+    background: var(--clr-gradient);
+    color: #fff;
+    padding: 3rem 2rem 3rem 2rem;
+    border-radius: 15px;
+}
+
+.card:nth-child(1) {
+    border-radius: 15px 0 0 15px;
+}
+
+.card:nth-child(3) {
+    border-radius: 0 15px 15px 0;
+}
+
+.card-primary {
+    text-align: center;
+}
+
+.card:nth-child(odd) > .card-primary {
+    color: var(--clr-dark);
+}
+
+.card:nth-child(even) .card-primary {
+    color: #fff;
+}
+
+
+.card-price {
+    font-size: 4rem;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card-price span {
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.card:nth-child(odd) > .card-price {
+    color: var(--clr-dark);
+}
+
+.card:nth-child(even) > .card-price {
+    color: #fff;
+}
+
+.card-details {
+    margin-bottom: 1.5rem;
+}
+
+.card-detail-item {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--clr-light);
+    border-bottom-color: var(--clr-light);
+}
+
+.card-detail-item:last-child {
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+.card:nth-child(even) > .card-details .card-detail-item {
+    border-top: 1px solid hsl(236, 72%, 79%);
+    border-bottom-color: hsl(236, 72%, 79%);
+}
+
+.learn-btn {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 2.5rem;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.card:nth-child(odd) > .learn-btn {
+    color: var(--clr-background);
+    background: var(--clr-gradient);
+}
+
+.card:nth-child(even) > .learn-btn {
+    color: hsl(237, 63%, 64%);
+    background: #fff;
+}
